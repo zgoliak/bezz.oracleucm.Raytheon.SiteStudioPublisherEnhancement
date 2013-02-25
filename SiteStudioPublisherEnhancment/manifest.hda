@@ -1,0 +1,13 @@
+﻿<?hda version="11gR1-11.1.1.6.0-idcprod1-111219T111403" jcharset="UTF8" encoding="utf-8"?>
+@Properties LocalData
+blDateFormat=M/d{/yy}{ h:mm[:ss]{ a}}!mAM,PM!tAmerica/Chicago
+@end
+@ResultSet Manifest
+2
+entryType
+location
+component
+SiteStudioPublisherEnhancment/SiteStudioPublisherEnhancment.hda
+componentExtra
+SiteStudioPublisherEnhancment/readme.txt
+@end

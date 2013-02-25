@@ -1,0 +1,94 @@
+﻿<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>SiteStudioPublisherEnhancment staticResTable
+	</head>
+	<body>
+<@table SiteStudioPublisherEnhancment_DataStoreDesignCreateDocMetaDefinition@>
+		<table border="1">
+			<caption>
+			<strong>
+			<tr>
+				<td>dsdComponentName</td>
+				<td>dsdVersion</td>
+				<td>dName</td>
+				<td>dCaption</td>
+				<td>dType</td>
+				<td>dIsRequired</td>
+				<td>dIsEnabled</td>
+				<td>dIsSearchable</td>
+				<td>dIsOptionList</td>
+				<td>dDefaultValue</td>
+				<td>dOptionListKey</td>
+				<td>dOptionListType</td>
+				<td>dsdIsSchema</td>
+				<td>dsdCheckFlag</td>
+				<td>dsdDisableOnUninstall</td>
+				<td>dOrder</td>
+			</tr>
+			<tr>
+				<td>SiteStudioPublisherEnhancement</td>
+				<td>0.1</td>
+				<td>xPublicationStatus</td>
+				<td>csxPublicationStatus</td>
+				<td>Text</td>
+				<td>0</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td></td>
+				<td>PublishStatus</td>
+				<td>strict</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>8000</td>
+			</tr>
+			<tr>
+				<td>SiteStudioPublisherEnhancement</td>
+				<td>0.1</td>
+				<td>xStatusChangedNodes</td>
+				<td>csxStatusChangedNodes</td>
+				<td>Text</td>
+				<td>0</td>
+				<td>1</td>
+				<td>1</td>
+				<td>0</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>8001</td>
+			</tr>
+			<tr>
+				<td>SiteStudioPublisherEnhancement</td>
+				<td>0.1</td>
+				<td>xGlobalWebsiteObject</td>
+				<td>csxGlobalWebsiteObject</td>
+				<td>Text</td>
+				<td>0</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>False</td>
+				<td>view://TrueFalseView</td>
+				<td>choice</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>8001</td>
+			</tr>
+		</table>
+<@end@>
+<@dynamichtml std_edit_entry@>
+<$if fieldName and ( fieldName like "xDependsOnWebsiteNode" )$>
+		<$include ss_website_section_field_entry$>
+	<$else$>
+		<$include super.std_edit_entry$>
+	<$endif$>
+<@end@>
+
+	</body>
+</html>

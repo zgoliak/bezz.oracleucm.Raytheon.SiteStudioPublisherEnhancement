@@ -1,0 +1,71 @@
+﻿<?hda version="11gR1-11.1.1.6.0-idcprod1-111219T111403" jcharset="UTF8" encoding="utf-8"?>
+@Properties LocalData
+ComponentName=SiteStudioPublisherEnhancment
+blDateFormat=M/d{/yy}{ h:mm[:ss]{ a}}!mAM,PM!tAmerica/Chicago
+hasPreferenceData=0
+preventAdditionalComponentDowngrade=0
+version=2013_02_08(build 0.1)
+@end
+@ResultSet ClassAliases
+3
+classname
+location
+loadOrder
+@end
+@ResultSet Filters
+4
+type
+location
+parameter
+loadOrder
+extraBeforeCacheLoadInit
+com.bezzotech.oracleucm.raytheon.SiteStudioPublisherEnhancment.SiteStudioPublisherEnhancmentInstallFilter
+extraBeforeCacheLoadInit
+50
+extraAfterServicesLoadInit
+com.bezzotech.oracleucm.raytheon.SiteStudioPublisherEnhancment.SiteStudioPublisherEnhancmentInstallFilter
+extraAfterServicesLoadInit
+50
+initSubjects
+com.bezzotech.oracleucm.raytheon.SiteStudioPublisherEnhancment.SiteStudioPublisherEnhancmentInstallFilter
+initSubjects
+50
+validateStandard
+com.bezzotech.oracleucm.raytheon.SiteStudioPublisherEnhancment.SiteStudioPublisherEnhancmentFilters
+SSPE_validateStandard
+50
+SiteStudioAddNode
+com.bezzotech.oracleucm.raytheon.SiteStudioPublisherEnhancment.SiteStudioPublisherEnhancmentFilters
+SSPE_SiteStudioAddNode
+50
+SiteStudioPreSetNodeProperty
+com.bezzotech.oracleucm.raytheon.SiteStudioPublisherEnhancment.SiteStudioPublisherEnhancmentFilters
+SSPE_SiteStudioPreSetNodeProperty
+50
+@end
+@ResultSet ResourceDefinition
+4
+type
+filename
+tables
+loadOrder
+resource
+resources/sspe_resource.htm
+null
+10
+query
+resources/sitestudiopublisherenhancment_query.htm
+SiteStudioPublisherEnhancment_Queries
+10
+@end
+@ResultSet MergeRules
+4
+fromTable
+toTable
+column
+loadOrder
+SiteStudioPublisherEnhancment_DataStoreDesignCreateDocMetaDefinition
+DataStoreDesignCreateDocMetaDefinition
+null
+10
+@end
