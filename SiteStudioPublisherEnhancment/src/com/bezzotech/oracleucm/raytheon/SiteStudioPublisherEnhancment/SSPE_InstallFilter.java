@@ -1,4 +1,4 @@
-﻿/*
+/*
 This file can be used to write custom install/uninstall steps.
 */
 
@@ -11,7 +11,7 @@ import intradoc.server.*;
 
 import java.io.*;
 
-public class SiteStudioPublisherEnhancmentInstallFilter implements FilterImplementor {
+public class SSPE_InstallFilter implements FilterImplementor {
 	public int doFilter( Workspace ws, DataBinder binder, ExecutionContext cxt )
 			throws DataException, ServiceException {
 		// CS version must be greater than 7.0 to run this install filter.

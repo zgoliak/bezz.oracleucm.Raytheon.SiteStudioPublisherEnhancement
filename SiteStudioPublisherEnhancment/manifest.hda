@@ -1,6 +1,9 @@
 ﻿<?hda version="11gR1-11.1.1.6.0-idcprod1-111219T111403" jcharset="UTF8" encoding="utf-8"?>
 @Properties LocalData
+ComponentName=SiteStudioPublisherEnhancment
+CreateDate=3/1/13 3:54 AM
 blDateFormat=M/d{/yy}{ h:mm[:ss]{ a}}!mAM,PM!tAmerica/Chicago
+blFieldTypes=CreateDate date
 @end
 @ResultSet Manifest
 2
@@ -10,4 +13,14 @@ component
 SiteStudioPublisherEnhancment/SiteStudioPublisherEnhancment.hda
 componentExtra
 SiteStudioPublisherEnhancment/readme.txt
+componentExtra
+SiteStudioPublisherEnhancment/install_strings.htm
+componentClasses
+SiteStudioPublisherEnhancment/classes.jar
+componentExtra
+SiteStudioPublisherEnhancment/classes_src.jar
+componentExtra
+SiteStudioPublisherEnhancment/notes.txt
+componentExtra
+SiteStudioPublisherEnhancment/preferences.hda
 @end

@@ -1,0 +1,15 @@
+##Navigate to development folder##
+Z:
+cd \SiteStudioPublisherEnhancment
+##Compile Java code in src directory and place in classes directory using the WCC IdcServer.jar library dependency##
+c:\Oracle\Middleware\jdk160_29\bin\javac -s src -d classes -cp c:\Oracle\Middleware\Oracle_ECM1\ucm\idc\jlib\idcserver.jar;C:\Oracle\Middleware\Oracle_ECM1\ucm\idc\components\SiteStudio\classes src\com\bezzotech\oracleucm\raytheon\SiteStudioPublisherEnhancment\*.java
+##Compress compiled Java code into library##
+c:\Oracle\Middleware\jdk160_29\bin\jar cfv classes.jar -C classes .
+##Compress source Java code into library##
+c:\Oracle\Middleware\jdk160_29\bin\jar cfv classes_src.jar -C src .
+
+Z:
+cd \SiteStudioPublisherEnhancment
+c:\Oracle\Middleware\jdk160_29\bin\javac -s src -d classes -cp c:\Oracle\Middleware\Oracle_ECM1\ucm\idc\jlib\idcserver.jar;C:\Oracle\Middleware\Oracle_ECM1\ucm\idc\components\SiteStudio\classes src\com\bezzotech\oracleucm\raytheon\SiteStudioPublisherEnhancment\*.java
+c:\Oracle\Middleware\jdk160_29\bin\jar cfv classes.jar -C classes .
+c:\Oracle\Middleware\jdk160_29\bin\jar cfv classes_src.jar -C src .

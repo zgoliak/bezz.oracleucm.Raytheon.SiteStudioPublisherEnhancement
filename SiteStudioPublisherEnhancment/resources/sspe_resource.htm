@@ -36,31 +36,13 @@
 				<td>1</td>
 				<td>1</td>
 				<td>1</td>
-				<td></td>
+				<td>hold</td>
 				<td>PublishStatus</td>
 				<td>strict</td>
 				<td></td>
 				<td></td>
 				<td></td>
 				<td>8000</td>
-			</tr>
-			<tr>
-				<td>SiteStudioPublisherEnhancement</td>
-				<td>0.1</td>
-				<td>xStatusChangedNodes</td>
-				<td>csxStatusChangedNodes</td>
-				<td>Text</td>
-				<td>0</td>
-				<td>1</td>
-				<td>1</td>
-				<td>0</td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td>8001</td>
 			</tr>
 			<tr>
 				<td>SiteStudioPublisherEnhancement</td>
@@ -72,7 +54,7 @@
 				<td>1</td>
 				<td>1</td>
 				<td>1</td>
-				<td>False</td>
+				<td>0</td>
 				<td>view://TrueFalseView</td>
 				<td>choice</td>
 				<td></td>
@@ -80,15 +62,91 @@
 				<td></td>
 				<td>8001</td>
 			</tr>
+			<tr>
+				<td>SiteStudioPublisherEnhancement</td>
+				<td>0.1</td>
+				<td>xDependsOnWebsiteSection</td>
+				<td>csxDependsOnWebsiteSection</td>
+				<td>Text</td>
+				<td>0</td>
+				<td>1</td>
+				<td>1</td>
+				<td>0</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>8002</td>
+			</tr>
 		</table>
 <@end@>
 <@dynamichtml std_edit_entry@>
-<$if fieldName and ( fieldName like "xDependsOnWebsiteNode" )$>
+<$if fieldName and ( fieldName like "xDependsOnWebsiteSection" )$>
 		<$include ss_website_section_field_entry$>
 	<$else$>
 		<$include super.std_edit_entry$>
 	<$endif$>
 <@end@>
-
+<@dynamichtml ss_default_project@>
+<?xml version="1.0" encoding="UTF-8" ?>
+<project
+	xmlns="http://www.stellent.com/sitestudio/Project/"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.stellent.com/sitestudio/Project/ http://www.stellent.com/sitestudio/ss_project_schema.xsd"
+	siteLabel="<$if siteLabel$><$xml(siteLabel)$><$else$>Unnamed Site<$endif$>"
+	siteId="<$xml(siteId)$>"
+	format="1"
+<$if siteType$>siteType="<$xml(siteType)$>"<$endif$>
+<$if external and isTrue(external)$>external="true"<$endif$>
+	siteLinkFormat="ServerSideScript"
+	siteLinkFormatHideInContributor="TRUE"
+	siteLinkFormatHideInDesigner="FALSE"
+	siteLinkFormatIncludeSiteId="FALSE"
+>
+<$if rootSectionLabel$>
+<$else$>
+	<$if siteName$>
+		<$rootSectionLabel = siteName$>
+	<$endif$>
+<$endif$>
+	<section
+		nodeId="<$if initalNodeId$><$initalNodeId$><$else$>1<$endif$>"
+		active="<$if rootSectionActive$><$xml(rootSectionActive)$><$else$>TRUE<$endif$>"
+		label="<$if rootSectionLabel$><$xml(rootSectionLabel)$><$else$><$xml(lc("wwSSDefaultHomeLabel"))$><$endif$>"
+<$if rootSectionUrlPageName$>urlPageName="<$xml(rootSectionUrlPageName)$>"<$endif$>
+<$if rootSectionUrlSecondaryPageName$>urlSecondaryPageName="<$xml(rootSectionUrlSecondaryPageName)$>"<$endif$>
+<$if rootSectionUrlDirName$>urlDirName="<$xml(rootSectionUrlDirName)$>"<$endif$>
+		PublicationStatus="hold"
+	>
+	</section>
+ <customPropertyDefinitions>
+  <customProp description="" name="PublicationStatus" type="text" /> 
+ </customPropertyDefinitions>
+	<assetCategories>
+<$loop SSDefaultAssetCategories$>
+		<assetCategory metadata="<$xml(metadata)$>" name="<$xml(lc(name))$>" description="<$xml(lc(description))$>" querytext="<$xml(eval(querytext))$>" type="<$xml(type)$>" />
+<$endloop$>
+	</assetCategories>
+</project>
+<@end@>
+<@table SiteStudioPublisherEnhancment_IdcTracingSections@>
+		<table border=1><caption><strong>
+			<tr>
+				<td>itsSection</td>
+				<td>itsDescription</td>
+				<td>itsDefaultEnabled</td>
+			</tr>
+			<tr>
+				<td>bezzotechraytheon</td>
+				<td>Site Studio Publisher Enhancement Section</td>
+				<td>0</td>
+			</tr>
+		</table>
+<@end@>
+<@csxPublicationStatus=Publication Status@>
+<@csxGlobalWebsiteObject=Global Website Object@>
+<@csxDependsOnWebsiteSection=Dependent Website Section@>
 	</body>
 </html>

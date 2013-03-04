@@ -2,9 +2,13 @@
 @Properties LocalData
 ComponentName=SiteStudioPublisherEnhancment
 blDateFormat=M/d{/yy}{ h:mm[:ss]{ a}}!mAM,PM!tAmerica/Chicago
-hasPreferenceData=0
+classpath=$COMPONENT_DIR/classes.jar
+hasInstallStrings=true
+hasPreferenceData=1
+installID=SiteStudioPublisherEnhancments
 preventAdditionalComponentDowngrade=0
-version=2013_02_08(build 0.1)
+requiredFeatures=SiteStudio
+version=2013_03_01-dev(build 0.57)
 @end
 @ResultSet ClassAliases
 3
@@ -19,15 +23,15 @@ location
 parameter
 loadOrder
 extraBeforeCacheLoadInit
-com.bezzotech.oracleucm.raytheon.SiteStudioPublisherEnhancment.SiteStudioPublisherEnhancmentInstallFilter
+com.bezzotech.oracleucm.raytheon.SiteStudioPublisherEnhancment.SSPE_InstallFilter
 extraBeforeCacheLoadInit
 50
 extraAfterServicesLoadInit
-com.bezzotech.oracleucm.raytheon.SiteStudioPublisherEnhancment.SiteStudioPublisherEnhancmentInstallFilter
+com.bezzotech.oracleucm.raytheon.SiteStudioPublisherEnhancment.SSPE_InstallFilter
 extraAfterServicesLoadInit
 50
 initSubjects
-com.bezzotech.oracleucm.raytheon.SiteStudioPublisherEnhancment.SiteStudioPublisherEnhancmentInstallFilter
+com.bezzotech.oracleucm.raytheon.SiteStudioPublisherEnhancment.SSPE_InstallFilter
 initSubjects
 50
 validateStandard
@@ -54,8 +58,12 @@ resources/sspe_resource.htm
 null
 10
 query
-resources/sitestudiopublisherenhancment_query.htm
+resources/sspe_query.htm
 SiteStudioPublisherEnhancment_Queries
+10
+environment
+sspe_environment.cfg
+null
 10
 @end
 @ResultSet MergeRules
@@ -67,5 +75,9 @@ loadOrder
 SiteStudioPublisherEnhancment_DataStoreDesignCreateDocMetaDefinition
 DataStoreDesignCreateDocMetaDefinition
 null
+10
+SiteStudioPublisherEnhancment_IdcTracingSections
+IdcTracingSections
+itsSection
 10
 @end
